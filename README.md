@@ -1,4 +1,4 @@
-# budgetapp
+# budgetApp
 
 To install dependencies:
 
