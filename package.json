@@ -4,14 +4,14 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "npx convex dev --once && concurrently -r npm:dev:web npm:dev:convex",
+    "dev": "bunx convex dev --once && bun run --parallel dev:web dev:ts",
     "dev:web": "vite dev",
     "dev:ts": "tsc -b -w",
-    "dev:convex": "npx convex dev",
-    "build": "vite build && tsc --noEmit",
-    "start": "node dist/server/server.js",
+    "dev:convex": "bunx convex dev",
+    "build": "bun vite build && tsc --noEmit",
+    "start": "bun dist/server/server.js",
     "format": "prettier --write .",
-    "lint": "tsc && eslint .  --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "tsc && eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "@convex-dev/react-query": "^0.1.0",
@@ -33,7 +33,8 @@
     "@tanstack/react-start": "^1.158.3",
     "convex": "^1.31.7",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "tamagui": "^2.0.0-rc.16"
   },
   "devDependencies": {
     "@convex-dev/eslint-plugin": "^1.1.1",
@@ -42,10 +43,10 @@
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.3",
-    "concurrently": "~9.2.1",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^6.0.5"
-  }
+  },
+  "packageManager": "bun@1.3.10"
 }

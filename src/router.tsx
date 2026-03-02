@@ -6,16 +6,7 @@ import { ConvexProvider } from 'convex/react'
 import { routeTree } from './routeTree.gen'
 
 export function getRouter() {
-  const CONVEX_URL =
-    typeof window !== 'undefined'
-      ? (import.meta as any).env?.VITE_CONVEX_URL
-      : process.env.VITE_CONVEX_URL || (import.meta as any).env?.VITE_CONVEX_URL
-
-  if (!CONVEX_URL) {
-    console.warn('CONVEX_URL not found, using default local URL')
-  }
-
-  const convexUrl = CONVEX_URL || 'http://127.0.0.1:3210'
+  const convexUrl = import.meta.env.VITE_CONVEX_URL as string
   const convexQueryClient = new ConvexQueryClient(convexUrl)
 
   const queryClient: QueryClient = new QueryClient({

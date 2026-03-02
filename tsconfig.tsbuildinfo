@@ -1,0 +1,1 @@
+{"root":["./tamagui.config.ts","./vite.config.ts","./convex/myFunctions.ts","./convex/schema.ts","./convex/_generated/api.d.ts","./convex/_generated/dataModel.d.ts","./convex/_generated/server.d.ts","./src/routeTree.gen.ts","./src/router.tsx","./src/routes/__root.tsx","./src/routes/index.tsx","./src/routes/kite-callback.tsx"],"version":"5.9.3"}

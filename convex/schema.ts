@@ -28,4 +28,25 @@ export default defineSchema({
     date: v.number(),
     createdAt: v.number(),
   }),
+  kiteSettings: defineTable({
+    apiKey: v.string(),
+    apiSecret: v.string(),
+    accessToken: v.optional(v.string()),
+    isConnected: v.boolean(),
+    createdAt: v.number(),
+  }),
+  kotakSettings: defineTable({
+    consumerKey: v.string(),
+    consumerSecret: v.optional(v.string()),
+    mobileNumber: v.string(),
+    ucc: v.string(),
+    mpin: v.string(),
+    // session fields populated after login
+    tradeToken: v.optional(v.string()),
+    sid: v.optional(v.string()),
+    hsServerId: v.optional(v.string()),
+    baseUrl: v.optional(v.string()),
+    isConnected: v.boolean(),
+    createdAt: v.number(),
+  }),
 })
